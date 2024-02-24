@@ -21,6 +21,13 @@ main {
     max-width: 425px;
 }
 
+.question {
+    position: absolute;
+    width: 30%;
+    bottom: 50%;
+    left: 30%;
+}
+
 .pokemon_img {
     position: absolute;
     bottom: 54%;
