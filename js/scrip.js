@@ -3,6 +3,11 @@ const pokemonNumber = document.querySelector('.pokemon_number');
 const pokemonImage = document.querySelector('.pokemon_img');
 const question = document.querySelector('.question');
 
+const blue = document.querySelector('.blue');
+const green = document.querySelector('.green');
+const red = document.querySelector('.red');
+const yellow = document.querySelector('.yellow');
+
 const form = document.querySelector('.form');
 const inputSearch = document.querySelector('.input_search');
 const buttonPrev = document.querySelector('.btn-prev');
@@ -21,13 +26,19 @@ const fetchPokemon = async (pokemon) => {
 
 const renderPokemon = async (pokemon) => {
 
+    green.style.display = 'none';
+    red.style.display = 'none';
+    yellow.style.display = 'none';
+
     pokemonName.innerHTML = 'Loading...';
     pokemonNumber.innerHTML = '';
+    yellow.style.display = 'block';
 
     const data = await fetchPokemon(pokemon);
 
     if (data) {
     pokemonImage.style.display = 'block';
+    green.style.display = 'block'
     question.style.display = 'none';
     pokemonName.innerHTML = data.name;
     pokemonNumber.innerHTML = data.id;
@@ -36,11 +47,13 @@ const renderPokemon = async (pokemon) => {
     searchPokemon = data.id;
     } else {
         question.style.display = 'block';
+        red.style.display = 'block'
         pokemonImage.style.display = 'none';
         pokemonName.innerHTML = 'Not Found :(';
         pokemonNumber.innerHTML = '';
         inputSearch.value = '';
     }
+    yellow.style.display = 'none';
 }
 
 form.addEventListener('submit', (event) => {

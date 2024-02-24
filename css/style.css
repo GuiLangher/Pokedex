@@ -16,6 +16,8 @@ main {
     position: relative;
 }
 
+
+
 .pokedex {
     width: 100%;
     max-width: 425px;
@@ -94,3 +96,39 @@ main {
     box-shadow: inset -4px 4px 0 #222;
     font-size: 0.9rem;
 }
+
+.light {
+    position: absolute;
+    gap: -90rem;
+    display: block;
+    right: 65%;
+    font-size: clamp(8px, 5vw, 25px);
+}
+
+.blue {
+    position: absolute;
+    animation: pisca_blue 1s infinite;
+    transform: translate(-34% , 0.05%);
+}
+
+.green {
+    position: absolute;
+    transform: translate(-34% , 0.05%);
+}
+
+.red {
+    position: absolute;
+    transform: translate(-34% , 0.05%);
+}
+
+.yellow {
+    position: absolute;
+    transform: translate(-34% , 0.05%);
+}
+
+@keyframes pisca_blue {
+    0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+}
+
